@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Angrezi Bilauta ❤️</title>
+    <style>
+        :root {
+            --hk-pink: #ffb7c5;
+            --spidey-red: #e63946;
+            --soft-white: #fffafa;
+            --gold: #ffd700;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--hk-pink), #f8bbd0);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #444;
+            overflow: hidden;
+        }
+
+        .page {
+            display: none;
+            width: 85%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: fadeIn 0.6s ease-in-out;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Next Button */
+        .next-btn {
+            background: var(--spidey-red);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .next-btn:hover { transform: scale(1.05); background: #c1121f; }
+
+        /* Gallery Styles */
+        .polaroid {
+            background: white;
+            padding: 10px 10px 25px 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transform: rotate(-1deg);
+        }
+        .polaroid img { width: 100%; border-radius: 5px; }
+
+        /* BGMI Box */
+        .bgmi-box {
+            background: #1a1a1a;
+            color: #f39c12;
+            padding: 15px;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8em;
+            text-align: left;
+            border: 1px solid #333;
+        }
+
+        /* Sparkle Animation */
+        .sparkle {
+            animation: sparkleAnim 1.5s infinite;
+            display: inline-block;
+            color: var(--gold);
+        }
+        @keyframes sparkleAnim {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .big-love { 
+            font-size: 3.5em; 
+            color: var(--spidey-red); 
+            font-weight: bold; 
+            text-shadow: 0 0 10px rgba(230, 57, 70, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="Tere Bina - Shreea Kaul (Official Audio).mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="page1" class="page active">
+        <div style="font-size: 70px; margin-bottom: 10px;">✉️</div>
+        <h2>For My <br>Angrezi Bilauta</h2>
+        <p>A random corner of the internet led me to you. Click to see the script we rewrote.</p>
+        <button class="next-btn" onclick="nextPage(2); playMusic()">Open Envelope</button>
+    </div>
+
+    <div id="page2" class="page">
+        <span style="font-size: 0.8em; color: #888; font-weight: bold;">THE NIGHTLY TRADITION</span>
+        <h2>05:42:18... and Counting 🌙</h2>
+        <p>I promise to keep falling asleep on our calls, as long as your voice is the last thing I hear.</p>
+        
+        <div class="polaroid"><img src="IMG_20260210_223927.jpg"></div>
+        <div class="polaroid" style="transform: rotate(2deg);"><img src="LINK_2"></div>
+        <div class="polaroid"><img src="LINK_3"></div>
+        <div class="polaroid" style="transform: rotate(-2deg);"><img src="LINK_4"></div>
+        <div class="polaroid"><img src="LINK_5"></div>
+
+        <button class="next-btn" onclick="nextPage(3)">Next Memory</button>
+    </div>
+
+    <div id="page3" class="page">
+        <h2>Victory Royale ❤️</h2>
+        <p>Feb 10 | 02:30 AM - 03:30 AM</p>
+        <div class="bgmi-box">
+            > MISSION: Wishlist fulfilled <br>
+            > STATUS: BGMI Downloaded <br>
+            > RESULT: I hate the game, but I love the player who made me download the game🤭.
+        </div>
+        <p>You're the only person I'd do this for, Angrezi Bilauta😼.</p>
+        <button class="next-btn" onclick="nextPage(4)">But then...</button>
+    </div>
+
+    <div id="page4" class="page">
+        <div id="kitty-emoji" style="font-size: 60px;">🐱</div>
+        <h2>The Permission 🦋</h2>
+        <p>That moment on video call when you asked for a kiss on my lips through the screen...</p>
+        <button class="next-btn" onclick="beShy()" id="shy-btn">What happened next?</button>
+        
+        <div id="shy-note" style="display:none; margin-top:20px; font-style: italic; line-height: 1.6;">
+            "I was blushing so hard I literally had to cover my eyes! And I covered them so fast🙈 And when I told you to stop, you just kept teasing me with <b>'Why?'</b>... <br><br>
+            I'm still blushing thinking about it."
+            <br>
+            <button class="next-btn" onclick="nextPage(5)">My Promises</button>
+        </div>
+    </div>
+
+    <div id="page5" class="page">
+        <h2>My Promises to You 🎀</h2>
+        <div style="text-align: left; line-height: 1.8;">
+            ✨ I'll always listen to your 'Chaos' just like you did for me, everday, all Time and forever.<br>
+            ✨ I will download each and every game from your wishlist just to see you smiling even I suck at them badly 🫠✌️.<br>
+            ✨ I'll be your calm safe harbor, not only this but your home too, a perfect kaleshi but pure environment for you and your heart💗.<br>
+            ✨ To you, my answer is always 'YES' even if you behave like a besharam bachha🤭.<br>
+            ✨ I'll always keep memorizing every small details of us🌸💕.
+        </div>
+        <button class="next-btn" onclick="nextPage(6)">One final note</button>
+    </div>
+
+    <div id="page6" class="page">
+        <div style="font-size: 80px; margin-bottom: 10px;">🎀</div>
+        <div class="big-love">
+            <span class="sparkle">✨</span>I LOVE YOU<span class="sparkle">✨</span>
+        </div>
+        <p>Happy Promise Day, Tanush.<br>Forever yours.</p>
+        <button class="next-btn" onclick="nextPage(1)" style="background: #888;">Restart Story</button>
+    </div>
+
+    <script>
+        function nextPage(pageNumber) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById('page' + pageNumber).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function playMusic() {
+            var audio = document.getElementById('bgMusic');
+            audio.play().catch(function(error) {
+                console.log("Music failed to play: ", error);
+            });
+        }
+
+        function beShy() {
+            document.getElementById('kitty-emoji').innerHTML = "🙈";
+            document.getElementById('shy-note').style.display = 'block';
+            document.getElementById('shy-btn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
